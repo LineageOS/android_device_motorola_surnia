@@ -86,6 +86,11 @@ PRODUCT_PACKAGES += \
     memtrack.msm8916 \
     power.msm8916
 
+# Art
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-swap=false
+
+# Audio
 PRODUCT_PACKAGES += \
     audio.msm8916 \
     audio_policy.msm8916
