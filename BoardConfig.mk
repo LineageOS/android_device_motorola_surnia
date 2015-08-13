@@ -139,6 +139,7 @@ BOARD_SEPOLICY_DIRS += \
     device/motorola/surnia/sepolicy
 
 BOARD_SEPOLICY_UNION += \
+    atfwd.te \
     atvc.te \
     batt_health.te \
     bluetooth_loader.te \
