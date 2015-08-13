@@ -52,6 +52,7 @@
 	<ctl name="EAR PA Gain" value="POS_1P5_DB" />
 	<ctl name="MI2S_RX Channels" value="One" />
 	<ctl name="MI2S_TX Channels" value="One" />
+	<ctl name="Boost Option" value="BOOST_ALWAYS" />
 
 	<ctl name="PRI_MI2S_RX Audio Mixer MultiMedia1" value="0" />
 	<ctl name="PRI_MI2S_RX Port Mixer INTERNAL_BT_SCO_TX" value="0" />

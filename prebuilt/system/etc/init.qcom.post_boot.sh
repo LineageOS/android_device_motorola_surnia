@@ -349,7 +349,7 @@ case "$target" in
 		echo 1 > /sys/devices/system/cpu/cpu2/online
 	        echo 1 > /sys/devices/system/cpu/cpu3/online
 	    ;;
-           "239" | "241" | "263")
+           "239" | "241" | "263" | "268" | "269" | "270" | "271")
 		echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
 		echo 10 > /sys/class/net/rmnet0/queues/rx-0/rps_cpus
             ;;
@@ -465,8 +465,8 @@ case "$target" in
            soc_id=`cat /sys/devices/system/soc/soc0/id`
         fi
 
-        # HMP scheduler settings for 8916, 8936, 8939
-        echo 2 > /proc/sys/kernel/sched_window_stats_policy
+        # HMP scheduler settings for 8916, 8936, 8939, 8929
+        echo 3 > /proc/sys/kernel/sched_window_stats_policy
 
         # Apply governor settings for 8916
         case "$soc_id" in
@@ -532,12 +532,12 @@ case "$target" in
 
         # Apply governor settings for 8939
         case "$soc_id" in
-            "239" | "241" | "263")
+            "239" | "241" | "263" | "268" | "269" | "270" | "271")
 
                 # HMP scheduler load tracking settings
                 echo 5 > /proc/sys/kernel/sched_ravg_hist_size
 
-                # HMP Task packing settings for 8939
+                # HMP Task packing settings for 8939, 8929
                 echo 20 > /proc/sys/kernel/sched_small_task
                 echo 30 > /proc/sys/kernel/sched_mostly_idle_load
                 echo 3 > /proc/sys/kernel/sched_mostly_idle_nr_run
@@ -599,6 +599,16 @@ case "$target" in
                 # HMP scheduler (big.Little cluster related) settings
                 echo 75 > /proc/sys/kernel/sched_upmigrate
                 echo 60 > /proc/sys/kernel/sched_downmigrate
+
+                # cpu idle load threshold
+                echo 30 > /sys/devices/system/cpu/cpu0/sched_mostly_idle_load
+                echo 30 > /sys/devices/system/cpu/cpu1/sched_mostly_idle_load
+                echo 30 > /sys/devices/system/cpu/cpu2/sched_mostly_idle_load
+                echo 30 > /sys/devices/system/cpu/cpu3/sched_mostly_idle_load
+                echo 30 > /sys/devices/system/cpu/cpu4/sched_mostly_idle_load
+                echo 30 > /sys/devices/system/cpu/cpu5/sched_mostly_idle_load
+                echo 30 > /sys/devices/system/cpu/cpu6/sched_mostly_idle_load
+                echo 30 > /sys/devices/system/cpu/cpu7/sched_mostly_idle_load
             ;;
         esac
     ;;
@@ -785,7 +795,7 @@ case "$target" in
         fi
 
         # HMP scheduler settings for 8909 similiar to 8916
-        echo 2 > /proc/sys/kernel/sched_window_stats_policy
+        echo 3 > /proc/sys/kernel/sched_window_stats_policy
         echo 3 > /proc/sys/kernel/sched_ravg_hist_size
 
         # HMP Task packing settings for 8909 similiar to 8916
@@ -878,7 +888,7 @@ case "$target" in
            soc_id=`cat /sys/devices/system/soc/soc0/id`
         fi
         case $soc_id in
-            "239" | "241" | "263")
+            "239" | "241" | "263" | "268" | "269" | "270" | "271")
             setprop ro.min_freq_0 960000
             setprop ro.min_freq_4 800000
 	;;
@@ -886,9 +896,8 @@ case "$target" in
             setprop ro.min_freq_0 800000
         ;;
         esac
-        #PERFD not used
         #start perfd after setprop
-        #start perfd # start perfd on 8916 and 8939
+        start perfd # start perfd on 8916, 8939 and 8929
     ;;
     "msm8974")
         start mpdecision
