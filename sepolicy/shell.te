@@ -1,0 +1,3 @@
+#============= shell ==============
+allow shell su:process signal;
+

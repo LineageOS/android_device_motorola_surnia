@@ -159,7 +159,9 @@ BOARD_SEPOLICY_UNION += \
     qseecomd.te \
     rild.te \
     rmt_storage.te \
+    shell.te \
     stml0xx.te \
+    subsystem_ramdump.te \
     surfaceflinger.te \
     system_server.te \
     tcmd.te \

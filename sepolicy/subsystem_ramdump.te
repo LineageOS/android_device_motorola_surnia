@@ -1,0 +1,3 @@
+#============= subsystem_ramdump ==============
+allow subsystem_ramdump device:dir read;
+
