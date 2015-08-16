@@ -144,3 +144,5 @@ audio.dolby.ds2.enabled=true
 persist.sys.ssr.restart_level=ALL_ENABLE
 persist.sys.qc.sub.rdump.on=1
 
+# Play store
+ro.com.google.clientidbase.gmm=android-motorola
