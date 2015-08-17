@@ -32,6 +32,7 @@
 /******************************************************************************/
 
 #define MAX_PATH_SIZE 80
+#define LOG_TAG "lights"
 
 static pthread_once_t g_init = PTHREAD_ONCE_INIT;
 static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
@@ -138,6 +139,7 @@ set_speaker_light_locked(struct light_device_t* dev,
     unsigned int colorRGB;
     char blink_pattern[PAGE_SIZE];
 
+
     switch (state->flashMode) {
         case LIGHT_FLASH_TIMED:
             onMS = state->flashOnMS;
@@ -151,6 +153,10 @@ set_speaker_light_locked(struct light_device_t* dev,
     }
 
     colorRGB = state->color;
+#if 1
+    ALOGD("set_speaker_light_locked mode %d, colorRGB=%08X, onMS=%d, offMS=%d\n",
+            state->flashMode, colorRGB, onMS, offMS);
+#endif
 
     if (onMS > 0 && offMS > 0) {
 
@@ -165,12 +171,9 @@ set_speaker_light_locked(struct light_device_t* dev,
     int brightness = ((77 * ((colorRGB >> 16) & 0xFF)) +
                       (150 * ((colorRGB >> 8) & 0xFF)) +
                       (29 * (colorRGB & 0xFF))) >> 8;
-    write_int(WHITE_LED_FILE, (int) brightness);
 
-    if (blink) {
-        sprintf(blink_pattern,"%6x %d %d %d %d",colorRGB,onMS,offMS,ramp,ramp);
-        write_str(RGB_CONTROL_FILE, blink_pattern);
-    }
+    sprintf(blink_pattern,"%6x %d %d %d %d",colorRGB,onMS,offMS,ramp,ramp);
+    write_str(RGB_CONTROL_FILE, blink_pattern);
 
     return 0;
 }
