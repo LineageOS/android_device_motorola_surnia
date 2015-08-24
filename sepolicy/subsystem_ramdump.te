@@ -1,2 +1,3 @@
 #============= subsystem_ramdump ==============
 allow subsystem_ramdump device:dir { open read };
+allow subsystem_ramdump system_data_file:dir read;

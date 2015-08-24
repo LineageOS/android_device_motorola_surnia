@@ -3,3 +3,6 @@ type tcmd_exec, exec_type, file_type;
 init_daemon_domain(tcmd);
 
 allow tcmd default_prop:property_service set;
+allow tcmd property_socket:sock_file write;
+allow tcmd self:capability setuid;
+
