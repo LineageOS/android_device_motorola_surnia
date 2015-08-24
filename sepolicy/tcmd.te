@@ -5,4 +5,9 @@ init_daemon_domain(tcmd);
 allow tcmd default_prop:property_service set;
 allow tcmd property_socket:sock_file write;
 allow tcmd self:capability setuid;
+allow tcmd self:netlink_route_socket create;
+allow tcmd self:tcp_socket { create ioctl };
+allow tcmd self:capability net_raw;
+allow tcmd self:netlink_route_socket { setopt bind };
+
 
