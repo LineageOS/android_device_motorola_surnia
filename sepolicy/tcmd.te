@@ -8,6 +8,5 @@ allow tcmd self:capability setuid;
 allow tcmd self:netlink_route_socket create;
 allow tcmd self:tcp_socket { create ioctl };
 allow tcmd self:capability net_raw;
-allow tcmd self:netlink_route_socket { setopt bind };
-
-
+allow tcmd self:netlink_route_socket { setopt bind read };
+allow tcmd init:unix_stream_socket connectto;
