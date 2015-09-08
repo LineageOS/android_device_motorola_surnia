@@ -177,8 +177,7 @@ PRODUCT_PACKAGES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    MotoDoze
-
+    CMActions
 PRODUCT_PACKAGES += \
     WCNSS_qcom_wlan_factory_nv.bin
 
