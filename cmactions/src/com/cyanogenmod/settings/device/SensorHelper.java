@@ -67,10 +67,6 @@ public class SensorHelper {
         return mSensorManager.getDefaultSensor(SENSOR_TYPE_MMI_CAMERA_ACTIVATION, true);
     }
 
-    public Sensor getChopChopSensor() {
-        return mSensorManager.getDefaultSensor(SENSOR_TYPE_MMI_CHOP_CHOP, true);
-    }
-
     public Sensor getFlatUpSensor() {
         return mSensorManager.getDefaultSensor(SENSOR_TYPE_MMI_FLAT_UP, true);
     }

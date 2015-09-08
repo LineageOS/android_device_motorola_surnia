@@ -36,7 +36,6 @@ public class CMActionsSettings {
     private final UpdatedStateNotifier mUpdatedStateNotifier;
 
     private boolean mCameraGestureEnabled;
-    private boolean mChopChopEnabled;
     private boolean mIrWakeUpEnabled;
     private boolean mPickUpGestureEnabled;
 
@@ -52,9 +51,6 @@ public class CMActionsSettings {
         return mCameraGestureEnabled;
     }
 
-    public boolean isChopChopGestureEnabled() {
-        return mChopChopEnabled;
-    }
 
     public static boolean isDozeEnabled(ContentResolver contentResolver) {
         return (Settings.Secure.getInt(contentResolver, Settings.Secure.DOZE_ENABLED, 1) != 0);
@@ -76,13 +72,9 @@ public class CMActionsSettings {
         new CameraActivationAction(mContext).action();
     }
 
-    public void chopChopAction() {
-        new TorchAction(mContext).action();
-    }
 
     private void loadPreferences(SharedPreferences sharedPreferences) {
         mCameraGestureEnabled = sharedPreferences.getBoolean(GESTURE_CAMERA_ACTION_KEY, true);
-        mChopChopEnabled = sharedPreferences.getBoolean(GESTURE_CHOP_CHOP_KEY, true);
         mIrWakeUpEnabled = sharedPreferences.getBoolean(GESTURE_IR_WAKEUP_KEY, true);
         mPickUpGestureEnabled = sharedPreferences.getBoolean(GESTURE_PICK_UP_KEY, true);
     }
@@ -95,8 +87,6 @@ public class CMActionsSettings {
 
             if (GESTURE_CAMERA_ACTION_KEY.equals(key)) {
                 mCameraGestureEnabled = sharedPreferences.getBoolean(GESTURE_CAMERA_ACTION_KEY, true);
-            } else if (GESTURE_CHOP_CHOP_KEY.equals(key)) {
-                mChopChopEnabled = sharedPreferences.getBoolean(GESTURE_CHOP_CHOP_KEY, true);
             } else if (GESTURE_IR_WAKEUP_KEY.equals(key)) {
                 mIrWakeUpEnabled = sharedPreferences.getBoolean(GESTURE_IR_WAKEUP_KEY, true);
             } else if (GESTURE_PICK_UP_KEY.equals(key)) {
