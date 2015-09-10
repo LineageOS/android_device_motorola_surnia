@@ -159,24 +159,19 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    stml0xx_wrapper.sh
+    stml0xx_wrapper.sh \
+    init.qcom.ril.sh \
+    init.surnia.sh
 
 PRODUCT_PACKAGES += \
+    fstab.qcom \
     init.mmi.boot.sh \
-    init.mmi.debug.rc \
-    init.mmi.diag.rc \
     init.mmi.dtv.sh \
     init.mmi.early_boot.sh \
-    init.mmi.overlay.rc \
-    init.mmi.rc \
     init.mmi.touch.sh \
     init.mmi.usb.rc \
     init.mmi.usb.sh \
-    init.qcom.class_core.sh \
     init.qcom.rc \
-    init.qcom.sh \
-    init.surnia.sh \
-    init.target.rc \
     ueventd.qcom.rc
 
 
