@@ -138,19 +138,16 @@ BOARD_SEPOLICY_DIRS += \
     device/motorola/surnia/sepolicy
 
 BOARD_SEPOLICY_UNION += \
-    atfwd.te \
     atvc.te \
     batt_health.te \
     bluetooth_loader.te \
     bootanim.te \
     device.te \
-    dropboxd.te \
     file.te \
     file_contexts \
     healthd.te \
     init.te \
     init_shell.te \
-    mbm_spy.te \
     mm-qcamerad.te \
     mpdecision.te \
     property.te \
@@ -160,10 +157,8 @@ BOARD_SEPOLICY_UNION += \
     rmt_storage.te \
     shell.te \
     stml0xx.te \
-    subsystem_ramdump.te \
     surfaceflinger.te \
     system_server.te \
-    tcmd.te \
     tee.te \
     ueventd.te \
     vold.te \

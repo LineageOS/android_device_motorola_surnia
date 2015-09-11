@@ -1,2 +1,0 @@
-#============= atfwd ==============
-allow atfwd ctl_default_prop:property_service set;
