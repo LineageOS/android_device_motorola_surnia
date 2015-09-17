@@ -146,6 +146,7 @@ on early-boot
     write /sys/kernel/boot_adsp/boot 1
 
     exec /system/bin/sh /init.mmi.early_boot.sh
+    exec /system/bin/sh /init.surnia.sh
 
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
