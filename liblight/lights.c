@@ -181,10 +181,17 @@ set_speaker_light_locked(struct light_device_t* dev,
 static void
 handle_speaker_battery_locked(struct light_device_t* dev)
 {
-    if (is_lit(&g_battery)) {
-        set_speaker_light_locked(dev, &g_battery);
-    } else {
+
+    int brightness_level;
+    //We want to see the notifications if they are there!!
+    if (is_lit(&g_notification)){
         set_speaker_light_locked(dev, &g_notification);
+    }else if (is_lit(&g_battery)) {
+        //No notification look at the battery state
+        write_str(RGB_CONTROL_FILE, "FFFFFF 1 0 0 0");
+    }else{
+        //Nothing to notify, just turn if off
+        write_str(RGB_CONTROL_FILE, "000000 0 0 0 0");
     }
 }
 
@@ -214,6 +221,20 @@ set_light_attention(struct light_device_t* dev,
     return 0;
 }
 
+static int
+set_light_battery(struct light_device_t* dev,
+        struct light_state_t const* state)
+{
+    ALOGD("Setting battery colorRGB=%08X", state->color);
+    // If 
+    pthread_mutex_lock(&g_lock);
+    g_battery = *state;
+    handle_speaker_battery_locked(dev);
+    pthread_mutex_unlock(&g_lock);
+    return 0;
+}
+
+
 
 /** Close the lights device */
 static int
@@ -241,6 +262,8 @@ static int open_lights(const struct hw_module_t* module, char const* name,
 
     if (0 == strcmp(LIGHT_ID_BACKLIGHT, name))
         set_light = set_light_backlight;
+    else if (0 == strcmp(LIGHT_ID_BATTERY, name))
+        set_light = set_light_battery;
     else if (0 == strcmp(LIGHT_ID_NOTIFICATIONS, name))
         set_light = set_light_notifications;
     else if (0 == strcmp(LIGHT_ID_ATTENTION, name))
@@ -276,6 +299,6 @@ struct hw_module_t HAL_MODULE_INFO_SYM = {
     .version_minor = 0,
     .id = LIGHTS_HARDWARE_MODULE_ID,
     .name = "MSM8610 lights Module",
-    .author = "Google, Inc., dhacker29",
+    .author = "Google, Inc., dhacker29, scritch007",
     .methods = &lights_module_methods,
 };
