@@ -70,7 +70,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.mot.build.customerid", "retus");
     } else if (ISMATCH(radio, "0x3")){
         /* XT1526 */
-        cdma_properties("0");
+        cdma_properties("1");
         property_set("ro.product.name", "surnia_boost");
         property_set("ro.product.model", "XT1526");
         property_set("ro.build.description", "surnia_boost-user 5.0.2 LXI22.50-14.8 30 release-keys");
@@ -86,6 +86,9 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("persist.radio.lifecalls", "0");
         property_set("persist.radio.lifetimer", "0");
         property_set("ro.carrier", "sprint");
+	property_set("ro.ril.force_eri_from_xml", "true");
+	property_set("ro.cdma.home.operator.numeric", "311870");
+	property_set("ro.cdma.home.operator.alpha", "Boost Mobile");
     } else if (ISMATCH(radio, "0x4")) {
         /* XT1524 */
         gsm_properties(false);
@@ -138,7 +141,9 @@ void cdma_properties(char cdma_sub[])
     property_set("ril.subscription.types","NV,RUIM");
     property_set("DEVICE_PROVISIONED","1");
     property_set("telephony.lteOnCdmaDevice", "1");
-    property_set("ro.telephony.default_network", "10");
+    //Is it a bad typo or not? Don't know so I'll leave it there for now
+    property_set("telephony.slteOnCdmaDevice", "1");
+    property_set("ro.telephony.default_network", "8");
 }
 void gsm_properties(bool msim)
 {
