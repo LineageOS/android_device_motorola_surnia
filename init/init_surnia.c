@@ -70,7 +70,8 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.mot.build.customerid", "retus");
     } else if (ISMATCH(radio, "0x3")){
         /* XT1526 */
-        cdma_properties("1");
+	// Set CDMA SUBSCRIPTION SOURCE to RUIM in Database for this device (O for RUIM 1 for NV)
+        cdma_properties("0");
         property_set("ro.product.name", "surnia_boost");
         property_set("ro.product.model", "XT1526");
         property_set("ro.build.description", "surnia_boost-user 5.0.2 LXI22.50-14.8 30 release-keys");
