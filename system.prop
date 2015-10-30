@@ -146,3 +146,6 @@ persist.sys.qc.sub.rdump.on=1
 
 # Play store
 ro.com.google.clientidbase.gmm=android-motorola
+
+# Wifi
+ro.disableWifiApFirmwareReload=true
