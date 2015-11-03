@@ -294,6 +294,10 @@ on boot
 
     insmod /system/lib/modules/touchx.ko
 
+    # Adaptive LMK
+    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
+    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
+
 on post-fs
     mkdir /persist/camera 0755 mot_tcmd mot_tcmd
     mkdir /persist/camera/ledcal 0755 camera mot_tcmd
