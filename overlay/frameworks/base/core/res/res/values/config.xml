@@ -236,9 +236,6 @@
          config to 7. -->
     <integer name="config_deviceHardwareWakeKeys">64</integer>
     
-    <!-- Performance profiles -->
-    <string name="config_perf_profile_prop">sys.perf.profile</string>
-    <string name="config_perf_profile_default_entry">1</string>
     <!-- Package name providing network location support. Used only when
          config_enableNetworkLocationOverlay is false. -->
     <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
