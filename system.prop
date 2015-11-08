@@ -56,6 +56,7 @@ media.stagefright.use-awesome=true
 #
 ro.use_data_netmgrd=true
 persist.data.netmgrd.qos.enable=true
+persist.data.qmi.adb_logmask=0
 
 #system props for time-services
 persist.timed.enable=true
