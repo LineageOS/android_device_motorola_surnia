@@ -14,11 +14,9 @@
 # limitations under the License.
 #
 
-
 LOCAL_PATH := device/motorola/surnia
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
 
 # Prebuilt
 PRODUCT_COPY_FILES += \
@@ -74,7 +72,6 @@ PRODUCT_PACKAGES += \
     tinymix \
     libqcomvisualizer \
     libqcomvoiceprocessing
-
 
 PRODUCT_COPY_FILES +=  \
     $(LOCAL_PATH)/audio/audio_effects.conf:system/etc/audio_effects.conf \
@@ -181,7 +178,6 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     ueventd.qcom.rc
 
-
 # Wifi
 PRODUCT_PACKAGES += \
     p2p_supplicant_overlay.conf \
@@ -200,6 +196,7 @@ PRODUCT_PACKAGES += \
 # Doze
 PRODUCT_PACKAGES += \
     CMActions
+
 PRODUCT_PACKAGES += \
     WCNSS_qcom_wlan_factory_nv.bin
 
