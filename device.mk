@@ -117,10 +117,6 @@ PRODUCT_PACKAGES += \
     camera.msm8916 \
     libmm-qcamera
 
-# Filesystem
-PRODUCT_PACKAGES += \
-    setup_fs
-
 # Qcom SoftAP & wifi
 PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg

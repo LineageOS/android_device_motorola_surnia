@@ -7,8 +7,8 @@
 
 #<src>                                                <mnt_point>  <type>  <mnt_flags and options>                     <fs_mgr_flags>
 /dev/block/platform/soc.0/by-name/system         /system      ext4    ro,barrier=1                                        wait
-/dev/block/platform/soc.0/by-name/userdata       /data        f2fs    rw,discard,nosuid,nodev,noatime,nodiratime,inline_xattr,inline_data  wait,check,encryptable=/dev/block/platform/soc.0/by-name/metadata
-/dev/block/platform/soc.0/by-name/cache          /cache       ext4    rw,noatime,nosuid,nodev,barrier=1,data=ordered   wait,check
+/dev/block/platform/soc.0/by-name/userdata       /data        f2fs    rw,discard,nosuid,nodev,noatime,nodiratime,inline_xattr,inline_data  wait,check,formattable,encryptable=/dev/block/platform/soc.0/by-name/metadata
+/dev/block/platform/soc.0/by-name/cache          /cache       ext4    rw,noatime,nosuid,nodev,barrier=1,data=ordered   wait,check,formattable
 /dev/block/platform/soc.0/by-name/persist        /persist     ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc      wait
 /dev/block/platform/soc.0/by-name/misc           /misc        emmc    defaults                                                    defaults
 /dev/block/platform/soc.0/by-name/fsg          /fsg         ext4    ro,nosuid,nodev,barrier=0,context=u:object_r:fsg_file:s0      wait,check
