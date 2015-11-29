@@ -160,9 +160,6 @@
     <!-- The VoiceMail default value is displayed to my own number if it is true -->
     <bool name="config_telephony_use_own_number_for_voicemail">true</bool>
 
-    <!-- Component name of the geofence services provider. -->
-    <string name="config_geofenceServicesProvider" translatable="false">com.motorola.motgeofencesvc</string>
-
     <integer-array name="config_longPressVibePattern">
         <item>21</item>
     </integer-array>
@@ -244,8 +241,8 @@
          config_enableFusedLocationOverlay is false. -->
     <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
 
-    <!-- Component name of the geofence services provider. -->
-    <string name="config_geofenceProvider" translatable="false">@null</string>
+    <!-- Component name of the service providing geofence API support. -->
+    <string name="config_geofenceProvider" translatable="false">com.motorola.motgeofencesvc</string>
 
     <!-- Component name of the combo network location provider. -->
     <string name="config_comboNetworkLocationProvider" translatable="false">com.qualcomm.location</string>
