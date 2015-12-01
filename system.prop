@@ -104,7 +104,7 @@ ro.audio.fm_max_volume=5169
 # Tone generator maximum volume be between 0 and 100 (0dB)
 ro.audio.ringbeep_volume=73
 #Buffer size in kbytes for compress offload playback
-audio.offload.buffer.size.kb=240
+audio.offload.buffer.size.kb=64
 #Minimum duration for offload playback in secs
 audio.offload.min.duration.secs=30
 # Motorola enable offload audio playback
