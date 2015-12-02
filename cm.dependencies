@@ -18,6 +18,10 @@
   {
     "repository": "android_external_connectivity",
     "target_path": "external/connectivity"
+  },
+  {
+    "repository": "android_external_sony_boringssl-compat",
+    "target_path": "external/sony/boringssl-compat"
   }
 ]
 

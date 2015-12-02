@@ -212,6 +212,10 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     ueventd.qcom.rc
 
+# SSL Compat
+PRODUCT_PACKAGES += \
+    libboringssl-compat
+
 # Stlport
 PRODUCT_PACKAGES += \
     libstlport
