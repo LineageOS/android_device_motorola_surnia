@@ -38,8 +38,7 @@
 #include "init_msm.h"
 
 void gsm_properties(bool msim);
-void cdma_properties(char cdma_sub[]);
-
+void cdma_properties();
 
 void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
@@ -60,7 +59,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     property_get("ro.boot.radio", radio);
     if (ISMATCH(radio, "0x2")) {
         /* XT1528 */
-        cdma_properties("0");
+        cdma_properties();
         property_set("ro.product.name", "surnia_verizon");
         property_set("ro.product.model", "XT1528");
         property_set("ro.product.device", "surnia_cdma");
@@ -87,7 +86,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     } else if (ISMATCH(radio, "0x3")){
         /* XT1526 */
 	// Set CDMA SUBSCRIPTION SOURCE to RUIM in Database for this device (O for RUIM 1 for NV)
-        cdma_properties("0");
+        cdma_properties();
         property_set("ro.product.name", "surnia_boost");
         property_set("ro.product.model", "XT1526");
         property_set("ro.build.description", "surnia_boost-user 5.0.2 LXI22.50-14.8 30 release-keys");
@@ -152,9 +151,9 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     strlcpy(devicename, device, sizeof(devicename));
     ERROR("Found radio id: %s setting build properties for %s device\n", radio, devicename);
 }
-void cdma_properties(char cdma_sub[])
+void cdma_properties()
 {
-    property_set("ro.telephony.default_cdma_sub", cdma_sub);
+    property_set("ro.telephony.default_cdma_sub", "0");
     property_set("ril.subscription.types","NV,RUIM");
     property_set("DEVICE_PROVISIONED","1");
     property_set("telephony.lteOnCdmaDevice", "1");
