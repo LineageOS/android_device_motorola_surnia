@@ -42,8 +42,8 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 an
 BOARD_KERNEL_CMDLINE += utags.blkdev=/dev/block/platform/soc.0/by-name/utags utags.backup=/dev/block/platform/soc.0/by-name/utagsBackup movablecore=160M
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_RAMDISK_OFFSET := 0x01000000
-BOARD_KERNEL_TAGS_OFFSET := 0x00000100
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
+TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8916
 TARGET_KERNEL_CONFIG := surnia_defconfig
 
