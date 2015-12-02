@@ -58,7 +58,23 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         return;
 
     property_get("ro.boot.radio", radio);
-    if (ISMATCH(radio, "0x1")) {
+    if (ISMATCH(radio, "0x2")) {
+        /* XT1528 */
+        cdma_properties("0");
+        property_set("ro.product.name", "surnia_verizon");
+        property_set("ro.product.model", "XT1528");
+        property_set("ro.product.device", "surnia_cdma");
+        property_set("ro.build.product", "surnia_cdma");
+        property_set("ro.build.description", "surnia_verizon-user 5.1 LPI23.29-17.5 5 release-keys");
+        property_set("ro.build.fingerprint", "motorola/surnia_verizon/surnia_cdma:5.1/LPI23.29-17.5/5:user/release-keys");
+        property_set("ro.mot.build.customerid", "verizon");
+        property_set("ro.ril.force_eri_from_xml", "true");
+        property_set("ro.telephony.get_imsi_from_sim", "true");
+        property_set("ro.com.google.clientidbase.am", "android-verizon");
+        property_set("ro.com.google.clientidbase.ms", "android-verizon");
+        property_set("ro.com.google.clientidbase.yt", "android-verizon");
+        property_set("ro.cdma.data_retry_config", "max_retries=infinite,0,0,10000,10000,100000,10000,10000,10000,10000,140000,540000,960000");
+    } else if (ISMATCH(radio, "0x1")) {
         /* XT1527 */
         gsm_properties(false);
         property_set("ro.product.name", "surnia_retus");
