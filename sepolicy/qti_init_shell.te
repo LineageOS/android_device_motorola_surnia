@@ -1,2 +1,0 @@
-#============= qti_init_shell ==============
-allow qti_init_shell utags_block_device:blk_file r_file_perms;

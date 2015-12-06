@@ -12,26 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Release name
-PRODUCT_RELEASE_NAME := surnia
+$(call inherit-product, device/motorola/msm8916-common/msm8916.mk)
+$(call inherit-product, device/motorola/surnia/full_surnia.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 540
 TARGET_SCREEN_HEIGHT := 960
 
-$(call inherit-product, device/motorola/surnia/full_surnia.mk)
-
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
-
-
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := surnia
 PRODUCT_NAME := cm_surnia
 PRODUCT_BRAND := motorola
-PRODUCT_MODEL := surnia
 PRODUCT_MANUFACTURER := motorola
-
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-
-PRODUCT_GMS_CLIENTID_BASE := android-motorola
+PRODUCT_RELEASE_NAME := surnia
