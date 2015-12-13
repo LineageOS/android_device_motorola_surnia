@@ -147,7 +147,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.mot.build.customerid", "retbr");
     }
     property_get("ro.product.device", device);
-    property_set("ro.product.display", "Moto E");
+    property_set("ro.product.display", "Moto E 2015");
     strlcpy(devicename, device, sizeof(devicename));
     ERROR("Found radio id: %s setting build properties for %s device\n", radio, devicename);
 }
