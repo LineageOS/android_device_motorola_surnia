@@ -83,7 +83,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.description", "surnia_retus-user 5.0.2 LXI22.50-24.1 1 release-keys");
         property_set("ro.build.fingerprint", "motorola/surnia_retus/surnia_umts:5.0.2/LXI22.50-24.1/1:user/release-keys");
         property_set("ro.mot.build.customerid", "retus");
-    } else if (ISMATCH(radio, "0x3")){
+    } else if (ISMATCH(radio, "0x3")) {
         /* XT1526 */
 	// Set CDMA SUBSCRIPTION SOURCE to RUIM in Database for this device (O for RUIM 1 for NV)
         cdma_properties();
@@ -115,7 +115,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.description", "surnia_reteu-user 5.0.2 LXI22.50-24.1 2 release-keys");
         property_set("ro.build.fingerprint", "motorola/surnia_reteu/surnia_umts:5.0.2/LXI22.50-24.1/2:user/release-keys");
         property_set("ro.mot.build.customerid", "reteuall");
-    } else if (ISMATCH(radio, "0x6")){
+    } else if (ISMATCH(radio, "0x6")) {
         /* XT1523 */
         gsm_properties(true);
         property_set("ro.product.name", "surnia_retbr_dstv");
@@ -135,7 +135,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.description", "surnia_reteu-user 5.0.2 LXI22.50-53.1 1 release-keys");
         property_set("ro.build.fingerprint", "motorola/surnia_reteu/surnia_umts:5.0.2/LXI22.50-53.1/1:user/release-keys");
         property_set("ro.mot.build.customerid", "retasiaall");
-    } else if (ISMATCH(radio, "0x8")){
+    } else if (ISMATCH(radio, "0x8")) {
         /* XT1514 */
         gsm_properties(true);
         property_set("ro.product.name", "surnia_retbr_ds");
@@ -151,6 +151,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     strlcpy(devicename, device, sizeof(devicename));
     ERROR("Found radio id: %s setting build properties for %s device\n", radio, devicename);
 }
+
 void cdma_properties()
 {
     property_set("ro.telephony.default_cdma_sub", "0");
@@ -161,15 +162,17 @@ void cdma_properties()
     property_set("telephony.slteOnCdmaDevice", "1");
     property_set("ro.telephony.default_network", "8");
 }
+
 void gsm_properties(bool msim)
 {
     property_set("telephony.lteOnGsmDevice", "1");
     property_set("ro.telephony.default_network", "9");
-    if (msim){
+    if (msim) {
         property_set("persist.radio.dont_use_dsd", "true");
         property_set("persist.radio.multisim.config", "dsds");
         property_set("persist.radio.plmn_name_cmp", "1");
-    }else{
+        property_set("ro.telephony.ril.config", "simactivation");
+    } else {
         property_set("persist.radio.multisim.config", "");
     }
 }
