@@ -60,7 +60,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     if (ISMATCH(radio, "0x2")) {
         /* XT1528 */
         cdma_properties();
-        property_set("ro.product.name", "surnia_verizon");
         property_set("ro.product.model", "XT1528");
         property_set("ro.product.device", "surnia_cdma");
         property_set("ro.build.product", "surnia_cdma");
@@ -76,7 +75,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     } else if (ISMATCH(radio, "0x1")) {
         /* XT1527 */
         gsm_properties(false);
-        property_set("ro.product.name", "surnia_retus");
         property_set("ro.product.model", "XT1527");
         property_set("ro.product.device", "surnia_umts");
         property_set("ro.build.product", "surnia_umts");
@@ -87,7 +85,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         /* XT1526 */
 	// Set CDMA SUBSCRIPTION SOURCE to RUIM in Database for this device (O for RUIM 1 for NV)
         cdma_properties();
-        property_set("ro.product.name", "surnia_boost");
         property_set("ro.product.model", "XT1526");
         property_set("ro.build.description", "surnia_boost-user 5.0.2 LXI22.50-14.8 30 release-keys");
         property_set("ro.build.fingerprint", "motorola/surnia_boost/surnia_cdma:5.0.2/LXI22.50-14.8/30:user/release-keys");
@@ -108,7 +105,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     } else if (ISMATCH(radio, "0x4")) {
         /* XT1524 */
         gsm_properties(false);
-        property_set("ro.product.name", "surnia_reteu");
         property_set("ro.product.model", "XT1524");
         property_set("ro.product.device", "surnia_umts");
         property_set("ro.build.product", "surnia_umts");
@@ -118,7 +114,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     } else if (ISMATCH(radio, "0x6")) {
         /* XT1523 */
         gsm_properties(true);
-        property_set("ro.product.name", "surnia_retbr_dstv");
         property_set("ro.product.model", "XT1523");
         property_set("ro.product.device", "surnia_udstv");
         property_set("ro.build.product", "surnia_udstv");
@@ -128,7 +123,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     } else if (ISMATCH(radio, "0x7")) {
         /* XT1521 */
         gsm_properties(true);
-        property_set("ro.product.name", "surnia_retasia_ds");
         property_set("ro.product.model", "XT1521");
         property_set("ro.product.device", "surnia_uds");
         property_set("ro.build.product", "surnia_uds");
@@ -138,7 +132,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     } else if (ISMATCH(radio, "0x8")) {
         /* XT1514 */
         gsm_properties(true);
-        property_set("ro.product.name", "surnia_retbr_ds");
         property_set("ro.product.model", "XT1514");
         property_set("ro.product.device", "surnia_uds");
         property_set("ro.build.product", "surnia_uds");
