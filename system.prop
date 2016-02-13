@@ -1,3 +1,9 @@
 # Bare-bones system.prop
 
+# Audio
+persist.audio.fluence.speaker=true
+persist.audio.fluence.voicecall=true
+ro.qc.sdk.audio.fluencetype=none
+
+# Display
 ro.sf.lcd_density=240
