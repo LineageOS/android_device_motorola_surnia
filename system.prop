@@ -1,4 +1,4 @@
-# Bare-bones system.prop
+# system.prop for surnia
 
 # Audio
 persist.audio.fluence.speaker=true
