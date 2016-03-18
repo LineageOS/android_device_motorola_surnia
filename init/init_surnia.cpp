@@ -42,10 +42,12 @@ void cdma_properties();
 
 void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
-    char platform[PROP_VALUE_MAX];
-    char radio[PROP_VALUE_MAX];
+    char carrier[PROP_VALUE_MAX];
     char device[PROP_VALUE_MAX];
     char devicename[PROP_VALUE_MAX];
+    char fsg[PROP_VALUE_MAX];
+    char platform[PROP_VALUE_MAX];
+    char radio[PROP_VALUE_MAX];
     int rc;
 
     UNUSED(msm_id);
@@ -57,6 +59,9 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         return;
 
     property_get("ro.boot.radio", radio);
+    property_get("ro.boot.carrier", carrier);
+    property_get("ro.boot.fsg-id", fsg);
+
     if (ISMATCH(radio, "0x2")) {
         /* XT1528 */
         cdma_properties();
@@ -83,25 +88,38 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.mot.build.customerid", "retus");
     } else if (ISMATCH(radio, "0x3")) {
         /* XT1526 */
-	// Set CDMA SUBSCRIPTION SOURCE to RUIM in Database for this device (O for RUIM 1 for NV)
         cdma_properties();
+        if (ISMATCH(carrier, "sprint")) {
+            if (ISMATCH(fsg, "boost")) {
+                property_set("ro.build.description", "surnia_boost-user 5.0.2 LXI22.50-14.8 30 release-keys");
+                property_set("ro.build.fingerprint", "motorola/surnia_boost/surnia_cdma:5.0.2/LXI22.50-14.8/30:user/release-keys");
+	        property_set("ro.cdma.home.operator.numeric", "311870");
+	        property_set("ro.cdma.home.operator.alpha", "Boost Mobile");
+            } else {
+                property_set("ro.build.description", "surnia_sprint-user 5.0.2 LXI22.50-14.8 30 release-keys");
+                property_set("ro.build.fingerprint", "motorola/surnia_sprint/surnia_cdma:5.0.2/LXI22.50-14.8/30:user/release-keys");
+            }
+            property_set("ro.fsg-id", "sprint");
+            property_set("ro.carrier", "sprint");
+            property_set("ro.mot.build.customerid ","sprint");
+        } else {
+            property_set("ro.build.description", "surnia_usc-user 5.0.2 LXI22.50-14.8 30 release-keys");
+            property_set("ro.build.fingerprint", "motorola/surnia_usc/surnia_cdma:5.0.2/LXI22.50-14.8/30:user/release-keys");
+            property_set("ro.mot.build.customerid", "usc");
+            property_set("ro.cdma.home.operator.alpha", "U.S. Cellular");
+            property_set("ro.cdma.home.operator.numeric", "311580");
+            property_set("ro.fsg-id", "usc");
+        }
         property_set("ro.product.model", "XT1526");
-        property_set("ro.build.description", "surnia_boost-user 5.0.2 LXI22.50-14.8 30 release-keys");
-        property_set("ro.build.fingerprint", "motorola/surnia_boost/surnia_cdma:5.0.2/LXI22.50-14.8/30:user/release-keys");
-        property_set("persist.radio.multisim.config", "");
-        property_set("ro.mot.build.customerid ","sprint");
-        property_set("ro.com.android.dataroaming","false");
+        property_set("ro.product.device", "surnia_cdma");
+        property_set("ro.build.product", "surnia_cdma");
         property_set("persist.radio.0x9e_not_callname","1");
-        property_set("ro.fsg-id", "sprint");
-        property_set("ro.diag.enumeration", "diag,serial,rmnet");
-        property_set("ro.cdma.subscription", "0");
-        property_set("ro.cdma.international.eri", "2,74,124,125,126,157,158,159,193,194,195,196,197,198,228,229,230,231,232,233,234,235");
         property_set("persist.radio.lifecalls", "0");
         property_set("persist.radio.lifetimer", "0");
-        property_set("ro.carrier", "sprint");
+        property_set("persist.radio.multisim.config", "");
+        property_set("ro.cdma.international.eri", "2,74,124,125,126,157,158,159,193,194,195,196,197,198,228,229,230,231,232,233,234,235");
+        property_set("ro.com.android.dataroaming","false");
 	property_set("ro.ril.force_eri_from_xml", "true");
-	property_set("ro.cdma.home.operator.numeric", "311870");
-	property_set("ro.cdma.home.operator.alpha", "Boost Mobile");
     } else if (ISMATCH(radio, "0x4")) {
         /* XT1524 */
         gsm_properties(false);
@@ -146,13 +164,14 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
 
 void cdma_properties()
 {
-    property_set("ro.telephony.default_cdma_sub", "0");
-    property_set("ril.subscription.types","NV,RUIM");
     property_set("DEVICE_PROVISIONED","1");
-    property_set("telephony.lteOnCdmaDevice", "1");
-    //Is it a bad typo or not? Don't know so I'll leave it there for now
-    property_set("telephony.slteOnCdmaDevice", "1");
+    property_set("gsm.sim.operator.iso-country", "US");
+    property_set("gsm.operator.iso-country", "US");
+    property_set("ril.subscription.types","NV,RUIM");
+    property_set("ro.telephony.default_cdma_sub", "0");
+    property_set("ro.product.locale.region", "US");
     property_set("ro.telephony.default_network", "8");
+    property_set("telephony.lteOnCdmaDevice", "1");
 }
 
 void gsm_properties(bool msim)

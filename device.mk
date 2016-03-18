@@ -22,12 +22,25 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
+
+# CDMA custom apns and eris
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/cdma/apns-conf-boost.xml:system/etc/cdma/apns-conf-boost.xml \
+    $(LOCAL_PATH)/configs/cdma/apns-conf-frdm.xml:system/etc/cdma/apns-conf-frdm.xml \
+    $(LOCAL_PATH)/configs/cdma/apns-conf-rngplus.xml:system/etc/cdma/apns-conf-rngplus.xml \
+    $(LOCAL_PATH)/configs/cdma/apns-conf-sprint.xml:system/etc/cdma/apns-conf-sprint.xml \
+    $(LOCAL_PATH)/configs/cdma/apns-conf-usc.xml:system/etc/cdma/apns-conf-usc.xml \
+    $(LOCAL_PATH)/configs/cdma/apns-conf-virgin.xml:system/etc/cdma/apns-conf-virgin.xml \
+    $(LOCAL_PATH)/configs/cdma/eri-boost.xml:system/etc/cdma/eri-boost.xml \
+    $(LOCAL_PATH)/configs/cdma/eri-frdm.xml:system/etc/cdma/eri-frdm.xml \
+    $(LOCAL_PATH)/configs/cdma/eri-rngplus.xml:system/etc/cdma/eri-rngplus.xml \
+    $(LOCAL_PATH)/configs/cdma/eri-virgin.xml:system/etc/cdma/eri-virgin.xml
 
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 # Overlay
