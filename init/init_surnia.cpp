@@ -63,9 +63,9 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     property_get("ro.boot.fsg-id", fsg);
 
     if (ISMATCH(radio, "0x2")) {
-        /* XT1528 */
+        /* XT1529 */
         cdma_properties();
-        property_set("ro.product.model", "XT1528");
+        property_set("ro.product.model", "XT1529");
         property_set("ro.product.device", "surnia_cdma");
         property_set("ro.build.product", "surnia_cdma");
         property_set("ro.build.description", "surnia_verizon-user 5.1 LPI23.29-17.5 5 release-keys");
