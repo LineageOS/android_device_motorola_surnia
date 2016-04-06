@@ -68,3 +68,6 @@ lib/hw/sensors.msm8916.so
 # Touchscreen
 /etc/firmware/synaptics-boe-s2316b-15031101-175833-surnia.tdat
 /etc/firmware/synaptics-inx-s2316i-15031102-175833-surnia.tdat
+
+# WCNSS
+etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
