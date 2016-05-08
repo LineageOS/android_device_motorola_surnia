@@ -35,12 +35,12 @@
 #include "log.h"
 #include "util.h"
 
-#include "init_msm.h"
+#define ISMATCH(a,b)    (!strncmp(a,b,PROP_VALUE_MAX))
 
 void gsm_properties(bool msim);
 void cdma_properties();
 
-void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
+void vendor_load_properties()
 {
     char carrier[PROP_VALUE_MAX];
     char device[PROP_VALUE_MAX];
@@ -49,10 +49,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     char platform[PROP_VALUE_MAX];
     char radio[PROP_VALUE_MAX];
     int rc;
-
-    UNUSED(msm_id);
-    UNUSED(msm_ver);
-    UNUSED(board_type);
 
     rc = property_get("ro.board.platform", platform);
     if (!rc || !ISMATCH(platform, ANDROID_TARGET))
