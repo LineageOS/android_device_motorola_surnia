@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_98c989ad",
+        "filename": "configs/media_profiles.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 7230
+      },
+      "writtenOn": "2016-05-31T14:24:35Z",
+      "side": 1,
+      "message": "Is this change intentional?",
+      "range": {
+        "startLine": 390,
+        "startChar": 40,
+        "endLine": 390,
+        "endChar": 42
+      },
+      "revId": "890bde6b6c7e7e7e56704b4e1d03653fe6b7ecd6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
