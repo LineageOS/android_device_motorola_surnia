@@ -58,9 +58,6 @@ vendor/lib/libchromatix_s5k5e2_liveshot.so
 vendor/lib/libchromatix_s5k5e2_preview.so
 vendor/lib/libchromatix_s5k5e2_snapshot.so
 
-# Charger
-bin/charge_only_mode
-
 # Sensors
 lib/libmotocalibration.so
 lib/hw/sensors.msm8916.so
