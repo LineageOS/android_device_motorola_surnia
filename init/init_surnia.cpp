@@ -136,8 +136,8 @@ void vendor_load_properties()
         property_set("ro.product.model", "XT1521");
         property_set("ro.product.device", "surnia_uds");
         property_set("ro.build.product", "surnia_uds");
-        property_set("ro.build.description", "surnia_reteu-user 5.0.2 LXI22.50-53.1 1 release-keys");
-        property_set("ro.build.fingerprint", "motorola/surnia_reteu/surnia_umts:5.0.2/LXI22.50-53.1/1:user/release-keys");
+        property_set("ro.build.description", "surnia_retasia_ds-user 5.0.2 LXI22.50-53.1 1 release-keys");
+        property_set("ro.build.fingerprint", "motorola/surnia_retasia_ds/surnia_uds:5.0.2/LXI22.50-53.1/1:user/release-keys");
         property_set("ro.mot.build.customerid", "retasiaall");
     } else if (radio == "0x8") {
         /* XT1514 */
