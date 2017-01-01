@@ -17,6 +17,7 @@ Battery | Li-Ion 2930mAh battery
 Display | 540 x 960 pixels, 4.5 inches (~245 ppi pixel density)
 Camera  | 5 MP, 2592 х 1944 pixels, autofocus
 
-Copyright 2015 - The CyanogenMod Project.
+Copyright 2015-2016 - The CyanogenMod Project.
+          2017 - The LineageOS Project
 
 ![Moto E 2015](https://wiki.cyanogenmod.org/images/thumb/f/f9/Otus.png/315px-Otus.png "Moto E 2015")
