@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a1a2d67_9668ea88",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7230
+      },
+      "writtenOn": "2017-01-01T17:44:00Z",
+      "side": 1,
+      "message": "This is part of rebranding, specify is not needed",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 55
+      },
+      "revId": "25af9473d9a1cf18c78dfa1d9cdb471103d9ca48",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1a2d67_76054ec1",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7230
+      },
+      "writtenOn": "2017-01-01T17:44:00Z",
+      "side": 1,
+      "message": "Not exactly sure how copyright works but I think as long this file doesn\u0027t get modified this is not needed",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 38
+      },
+      "revId": "25af9473d9a1cf18c78dfa1d9cdb471103d9ca48",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a1a2d67_560a52d3",
+        "filename": "extract-files.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 7230
+      },
+      "writtenOn": "2017-01-01T17:44:00Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 29
+      },
+      "revId": "25af9473d9a1cf18c78dfa1d9cdb471103d9ca48",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
