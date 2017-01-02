@@ -162,7 +162,7 @@ void cdma_properties()
     property_set("ro.telephony.default_cdma_sub", "0");
     property_set("ro.product.locale.region", "US");
     property_set("ro.telephony.default_network", "8");
-    property_set("telephony.lteOnCdmaDevice", "1");
+    property_set("telephony.lteOnCdmaDevice", "0");
 }
 
 void gsm_properties(bool msim)
