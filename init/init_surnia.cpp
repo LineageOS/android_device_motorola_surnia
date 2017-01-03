@@ -63,7 +63,6 @@ void vendor_load_properties()
         property_set("ro.build.description", "surnia_verizon-user 5.1 LPI23.29-17.5 5 release-keys");
         property_set("ro.build.fingerprint", "motorola/surnia_verizon/surnia_cdma:5.1/LPI23.29-17.5/5:user/release-keys");
         property_set("ro.mot.build.customerid", "verizon");
-        property_set("ro.ril.force_eri_from_xml", "true");
         property_set("ro.telephony.get_imsi_from_sim", "true");
         property_set("ro.com.google.clientidbase.am", "android-verizon");
         property_set("ro.com.google.clientidbase.ms", "android-verizon");
@@ -111,7 +110,6 @@ void vendor_load_properties()
         property_set("persist.radio.multisim.config", "");
         property_set("ro.cdma.international.eri", "2,74,124,125,126,157,158,159,193,194,195,196,197,198,228,229,230,231,232,233,234,235");
         property_set("ro.com.android.dataroaming","false");
-	property_set("ro.ril.force_eri_from_xml", "true");
     } else if (radio == "0x4") {
         /* XT1524 */
         gsm_properties(false);
