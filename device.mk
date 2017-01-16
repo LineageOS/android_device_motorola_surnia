@@ -1,5 +1,6 @@
 #
-# Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2015-2016 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -26,19 +27,6 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
-
-# CDMA custom apns and eris
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/cdma/apns-conf-boost.xml:system/etc/cdma/apns-conf-boost.xml \
-    $(LOCAL_PATH)/configs/cdma/apns-conf-frdm.xml:system/etc/cdma/apns-conf-frdm.xml \
-    $(LOCAL_PATH)/configs/cdma/apns-conf-rngplus.xml:system/etc/cdma/apns-conf-rngplus.xml \
-    $(LOCAL_PATH)/configs/cdma/apns-conf-sprint.xml:system/etc/cdma/apns-conf-sprint.xml \
-    $(LOCAL_PATH)/configs/cdma/apns-conf-usc.xml:system/etc/cdma/apns-conf-usc.xml \
-    $(LOCAL_PATH)/configs/cdma/apns-conf-virgin.xml:system/etc/cdma/apns-conf-virgin.xml \
-    $(LOCAL_PATH)/configs/cdma/eri-boost.xml:system/etc/cdma/eri-boost.xml \
-    $(LOCAL_PATH)/configs/cdma/eri-frdm.xml:system/etc/cdma/eri-frdm.xml \
-    $(LOCAL_PATH)/configs/cdma/eri-rngplus.xml:system/etc/cdma/eri-rngplus.xml \
-    $(LOCAL_PATH)/configs/cdma/eri-virgin.xml:system/etc/cdma/eri-virgin.xml
 
 # Media
 PRODUCT_COPY_FILES += \
