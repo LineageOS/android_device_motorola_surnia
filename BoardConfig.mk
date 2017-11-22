@@ -27,6 +27,9 @@ TARGET_KERNEL_CONFIG := surnia_defconfig
 TARGET_OTA_ASSERT_DEVICE := XT1514,XT1521,XT1524,XT1526,XT1527,XT1523,surnia_uds,surnia_umts,surnia,surnia_udstv
 TARGET_RELEASETOOLS_EXTENSIONS := # Not a typo, surnia doesn't need fw extraction script
 
+# Camera
+BOARD_GLOBAL_CFLAGS += -DCONFIG_MSM_USES_M_STACK
+
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_surnia
 TARGET_RECOVERY_DEVICE_MODULES := libinit_surnia
