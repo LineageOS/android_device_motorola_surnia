@@ -15,6 +15,7 @@ lib/libmm-qcamera.so
 lib/libmmcamera_interface.so
 lib/libmmcamera_lux_standardization.so
 lib/libmmjpeg_interface.so
+lib/libmotocalibration.so
 lib/libqomx_core.so
 lib/hw/camera.msm8916.so:lib/hw/camera.vendor.msm8916.so
 vendor/lib/libactuator_rohm_bu64245gwz.so
@@ -57,10 +58,6 @@ vendor/lib/libchromatix_s5k5e2_hfr_60fps.so
 vendor/lib/libchromatix_s5k5e2_liveshot.so
 vendor/lib/libchromatix_s5k5e2_preview.so
 vendor/lib/libchromatix_s5k5e2_snapshot.so
-
-# Sensors
-lib/libmotocalibration.so
-lib/hw/sensors.msm8916.so
 
 # Touchscreen
 /etc/firmware/synaptics-boe-s2316b-15031101-175833-surnia.tdat
