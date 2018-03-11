@@ -44,3 +44,9 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.target.rc
+
+# Sensors
+PRODUCT_PACKAGES += \
+    stml0xx \
+    sensors.msm8916 \
+    sensorhub.msm8916
