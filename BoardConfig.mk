@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2015 The Android Open-Source Project
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := # Not a typo, surnia doesn't need fw extractio
 
 # Camera
 BOARD_GLOBAL_CFLAGS += -DCONFIG_MSM_USES_M_STACK
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_surnia
