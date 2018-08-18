@@ -27,6 +27,9 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+on early-init
+    start surnia-config-sh
+
 on boot
     # Switch to interactive and let PowerHAL configure it
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
@@ -46,6 +49,47 @@ on boot
     chmod 0644 /sys/devices/system/cpu/cpufreq/interactive/target_loads
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+
+service surnia-config-sh /vendor/bin/init.device.config.sh
+    class core
+    user root
+    oneshot
+    disabled
+
+on property:ro.device.dualsim=true
+    setprop persist.radio.multisim.config dsds
+    setprop persist.radio.force_get_pref 1
+    setprop persist.radio.dont_use_dsd true
+    setprop persist.radio.plmn_name_cmp 1
+    setprop ro.telephony.ril.config simactivation
+
+on property:ro.device.dualsim=false
+    setprop persist.radio.multisim.config ""
+
+on property:ro.device.cdma=false
+    setprop telephony.lteOnGsmDevice 1
+    setprop ro.telephony.default_network 9
+
+on property:ro.device.cdma=true
+    setprop telephony.lteOnCdmaDevice 1
+    setprop ro.telephony.default_network 8
+    setprop gsm.sim.operator.iso-country US
+    setprop gsm.operator.iso-country US
+    setprop ril.subscription.types "NV,RUIM"
+    setprop ro.telephony.default_cdma_sub 0
+    setprop ro.product.locale.region US
+
+on property:ro.boot.carrier=boost
+    setprop ro.cdma.home.operator.numeric 311870
+    setprop ro.cdma.home.operator.alpha "Boost Mobile"
+
+on property:ro.boot.carrier=sprint
+    setprop ro.cdma.home.operator.numeric 310120
+    setprop ro.cdma.home.operator.alpha "Sprint"
+
+on property:ro.boot.carrier=usc
+    setprop ro.cdma.home.operator.numeric 311580
+    setprop ro.cdma.home.operator.alpha "U.S. Cellular"
 
 on property:sys.boot_completed=1
     setprop sys.io.scheduler bfq
