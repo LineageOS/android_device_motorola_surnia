@@ -19,4 +19,4 @@ Camera  | 5 MP, 2592 х 1944 pixels, autofocus
 
 Copyright 2015 - The CyanogenMod Project.
 
-![Moto E 2015](https://wiki.cyanogenmod.org/images/thumb/f/f9/Otus.png/315px-Otus.png "Moto E 2015")
+![Moto E 2015](https://cdn2.gsmarena.com/vv/pics/motorola/motorola-moto-e-2015-1.jpg "Moto E 2015")
