@@ -31,7 +31,9 @@ TARGET_RELEASETOOLS_EXTENSIONS := # Not a typo, surnia doesn't need fw extractio
 BOARD_GLOBAL_CFLAGS += -DCONFIG_MSM_USES_M_STACK
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
-	/system/bin/mm-qcamera-daemon=23
+    /system/bin/cameraserver=23 \
+    /system/bin/mediaserver=23 \
+    /system/bin/mm-qcamera-daemon=23
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432 #65536 * 512 mmcblk0p33
