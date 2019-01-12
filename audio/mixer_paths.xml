@@ -559,7 +559,8 @@
 	</path>
 
 	<path name="voice-handset">
-		<path name="handset" />
+		<path name="speaker" />
+		<ctl name="RX3 Digital Volume" value="70" />
 	</path>
 
 	<path name="voice-speaker">
