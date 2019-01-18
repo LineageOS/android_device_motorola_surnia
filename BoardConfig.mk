@@ -34,6 +34,9 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/bin/mediaserver=23 \
     /vendor/bin/mm-qcamera-daemon=23
 
+# Display
+TARGET_SCREEN_DENSITY := 240
+
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432 #65536 * 512 mmcblk0p33
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33538048 #65504 * 512 mmcblk0p34
