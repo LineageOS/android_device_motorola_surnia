@@ -21,7 +21,7 @@ LOCAL_PATH := $(call my-dir)
 FIRMWARE_MBA_IMAGES := \
     mba.mbn
 
-FIRMWARE_MBA_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FIRMWARE_MBA_IMAGES)))
+FIRMWARE_MBA_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(FIRMWARE_MBA_IMAGES)))
 $(FIRMWARE_MBA_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "MBA Firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -37,7 +37,7 @@ FIRMWARE_MODEM_IMAGES := \
     modem.b20 modem.b23 modem.b24 modem.b25 modem.b27 modem.b28 \
     modem.mdt
 
-FIRMWARE_MODEM_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FIRMWARE_MODEM_IMAGES)))
+FIRMWARE_MODEM_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(FIRMWARE_MODEM_IMAGES)))
 $(FIRMWARE_MODEM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Modem Firmware link: $@"
 	@mkdir -p $(dir $@)
