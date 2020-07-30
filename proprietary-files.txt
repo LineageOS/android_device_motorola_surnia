@@ -17,10 +17,10 @@ vendor/lib/libmmcamera_lux_standardization.so
 vendor/lib/libmmjpeg_interface.so
 vendor/lib/libmotocalibration.so
 vendor/lib/libqomx_core.so
-vendor/lib/hw/camera.msm8916.so:lib/hw/camera.vendor.msm8916.so
 vendor/lib/libactuator_rohm_bu64245gwz.so
 vendor/lib/libactuator_rohm_bu64245gwz_camcorder.so
 vendor/lib/libactuator_rohm_bu64245gwz_camera.so
+vendor/lib/hw/camera.vendor.msm8916.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegehw.so
 vendor/lib/libmmcamera2_c2d_module.so
