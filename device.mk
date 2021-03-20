@@ -18,6 +18,9 @@
 $(call inherit-product, device/motorola/msm8916-common/msm8916.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_l.mk)
 
+# Setup dalvik vm configs
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+
 # Screen density
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
